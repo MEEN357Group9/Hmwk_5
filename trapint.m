@@ -13,7 +13,7 @@ function [ I ] = trapint(x,fx)
 % input error checking
 if length(x) ~= length(fx) 
     error('x and fx need to be the same length')
-elseif ismatrix(x) || ismatrix(fx)
+elseif ~isvector(x) || ~isvector(fx)
     error('Check x or fx. They must be arrays, not matrices.')
 elseif ~isnumeric(x) || ~isnumeric(fx)
     error('Check x or fx. The elements of the array must be numeric.')
