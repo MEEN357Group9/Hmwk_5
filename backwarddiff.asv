@@ -26,12 +26,12 @@ if isnumeric(fx) ~= 1
 end
 
 
-for i = 1:chk1
-    I = (3*fx(i)) - 4*fx(i-1)) + fx(i-2))/(2*x(i-1) - x(i))    
+for i = chk1:-1:1
+    if fx(i) <= 0
+       fx = 0;
+    end
+    I = (3*fx(i) - 4*fx(i-1) + fx(i-2))/(2*x(i-1) - x(i));
 end
-
-
-
 
 
 

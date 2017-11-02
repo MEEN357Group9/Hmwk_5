@@ -27,7 +27,10 @@ end
 
 
 for i = chk1:-1:1
-    I = (3*fx(i)) - 4*fx(i-1) + fx(i-2))/(2*x(i-1) - x(i))    
+    if i-1 <= 0
+       fx = 0;
+    end
+    I = (3*fx(i) - 4*fx(i-1) + fx(i-2))/(2*x(i-1) - x(i));
 end
 
 
