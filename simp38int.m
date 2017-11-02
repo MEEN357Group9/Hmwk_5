@@ -18,7 +18,7 @@ if ~isscalar(h)
     error('h must be a scalar value.')
 elseif ~isvector(fx)
     error('fx must be a vector.')
-elseif mod(length(fx),2) = 0
+elseif mod(length(fx),2) == 0
     error('fx must be a vector with an odd number of elements')
 elseif ~isnumeric(h) || ~isnumeric(fx)
     error('h and fx must be numeric.')
