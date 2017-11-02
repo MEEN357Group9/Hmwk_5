@@ -20,7 +20,7 @@ sizess = zeros(1);
 for j = 3:30
     
     h = 3/j; %interval
-    x = 0:h:3; % x values
+    x = linspace(0,3,j); % x values
     y = x.^2.*sin(x); % corresponding y values
     
     sizest(u) = j;

@@ -27,20 +27,22 @@ else
 end
 
 % actual integration
-Iin = 0; % start summation
+Iin = zeros(1); % start summation
 
 for j = 1:length(fx)
     
     % first and last fx are special
-    if j == 1 || j == length(fx)
-        Iin = Iin + fx(j);
+    if j == 1 
+        Iin(j) = fx(j);
+    elseif j == length(fx)
+        Iin(j) = fx(j);
     else
-        Iin = Iin + 3 * fx(j);
+        Iin(j) = 3 * fx(j);
     end
     
 end
 
-I = 3*h / 8 * Iin;
+I = 3*h / 8 * sum(Iin);
 
 end
 
