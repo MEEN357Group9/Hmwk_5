@@ -54,7 +54,11 @@ for j = 1:length(fx) %%%%%%%%%% they said that it should just be the
     
 end
 
+<<<<<<< HEAD
+I = 3* h/ 8 * sum(Iin);
+=======
 %I = 3*h / 8 * sum(Iin);
+>>>>>>> 45b1e6d2026e0ea9ca8d3e562ea6e4a825a87643
 
 end
 
