@@ -18,7 +18,10 @@ if ~isscalar(h)
     error('h must be a scalar value.')
 elseif ~isvector(fx)
     error('fx must be a vector.')
-elseif mod(length(fx),2) == 0
+elseif mod(length(fx)-1,2) == 0 %%%%%%%% also apparently this was wrong on the 
+    %                               document, it's supposed to be
+    %                               (length(x)-1)/3 because of something
+    %                               about the number of points it uses 
     error('fx must be a vector with an odd number of elements')
 elseif ~isnumeric(h) || ~isnumeric(fx)
     error('h and fx must be numeric.')
@@ -29,9 +32,16 @@ end
 % actual integration
 Iin = zeros(1); % start summation
 
-for j = 1:length(fx)
+for j = 1:length(fx) %%%%%%%%%% they said that it should just be the
+                                %equation in lecture 9 slide 20 and then
+                                % it's just playing around with the index
     
-    % first and last fx are special
+    Iin = (3*h)*(fx(j) + 3*fx(j) + 3*fx(j+1) + fx(j+2))/8;
+    %{
+    %%%%%%% so the way the index goes is it's supposed to 
+            do steps 1,2,3,4 then 4,5,6,7 then 7,8,9,10 and so on                   
+
+    first and last fx are special
     if j == 1 
         Iin(j) = fx(j);
     elseif j == length(fx)
@@ -39,10 +49,16 @@ for j = 1:length(fx)
     else
         Iin(j) = 3 * fx(j);
     end
+ %}
+          
     
 end
 
+<<<<<<< HEAD
 I = 3* h/ 8 * sum(Iin);
+=======
+%I = 3*h / 8 * sum(Iin);
+>>>>>>> 45b1e6d2026e0ea9ca8d3e562ea6e4a825a87643
 
 end
 

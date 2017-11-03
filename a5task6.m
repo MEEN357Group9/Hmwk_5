@@ -1,4 +1,4 @@
-%% A5TASK6  Application of backwarddiff.m
+% A5TASK6  Application of backwarddiff.m
 %
 % Assignment 5, Task 6
 % Group 9
@@ -15,11 +15,12 @@
  
  equ = zeros(1,11);
  y = zeros(1,11);
- for i = 1:11
-    equ(i) = T(i) - T_amb;
-    I(i) = backwarddiff(i,i);
- end
- 
+ I = zeros(1,11);
+
+ equ = T(3:9) - T_amb;
+  
+
+ I = backwarddiff(t,T);
  %y = [1,2,3,4,5,6,7,8,9,10,11];
  
  figure
