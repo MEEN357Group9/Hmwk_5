@@ -1,4 +1,15 @@
 function I = backwarddiff(x,fx)
+% This function approximates the derivative for O(h^2) 
+%
+% Inputs:
+% x            (N-element vector) numerical data for sample locations
+% fx           (N-element vector) function data taken at locations defined
+%              in input x
+%
+% Outputs: 
+% I            is the approximation for the differentiation of fx over its sampled
+%              range
+
 
 chk1 = length(x);
 chk2 = length(fx);
@@ -6,8 +17,6 @@ chk2 = length(fx);
 if chk1 ~= chk2
     error('x and fx are not the same length')
 end
-
-
 
 if isvector(x) ~= 1
     error('One of your inputs is not a vector')
@@ -25,14 +34,11 @@ if isnumeric(fx) ~= 1
      error('One of your inputs is not a vector')
 end
 
+I = zeros;
+for i = 3:chk1-2
+    I(i-2) = (3*fx(i) - 4*fx(i-1) + fx(i-2))/(2*(x(i) - x(i-1)));
 
-for i = chk1:-1:1
-    if fx(i) <= 0
-       fx = 0;
-    end
-    I = (3*fx(i) - 4*fx(i-1) + fx(i-2))/(2*x(i-1) - x(i));
 end
-
 
 
 end

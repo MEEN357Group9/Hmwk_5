@@ -12,17 +12,9 @@
  T = [100,80,50,40,35,30,27,25,24,23.5,23.5];
  
  T_amb = 23; % Degrees C
- 
- equ = zeros(1,11);
- y = zeros(1,11);
- I = zeros(1,11);
-
- equ = T(3:9) - T_amb;
-  
-
+ equ = T(3:9) - T_amb; % starts off at 3 to get the same vector array as backwarddiff produces 
  I = backwarddiff(t,T);
- %y = [1,2,3,4,5,6,7,8,9,10,11];
- 
+
  figure
  plot(equ,I)
  
