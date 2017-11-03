@@ -41,25 +41,12 @@ for j = 1:3:length(fx)-2 %%%%%%%%%% they said that it should just be the
     %{
     %%%%%%% so the way the index goes is it's supposed to 
             do steps 1,2,3,4 then 4,5,6,7 then 7,8,9,10 and so on                   
-
-    first and last fx are special
-    if j == 1 
-        Iin(j) = fx(j);
-    elseif j == length(fx)
-        Iin(j) = fx(j);
-    else
-        Iin(j) = 3 * fx(j);
-    end
  %}
           
     
 end
 I=sum(Iin);
-% <<<<<<< HEAD
-% I = 3* h/ 8 * sum(Iin);
-% =======
-%I = 3*h / 8 * sum(Iin);
-% >>>>>>> 45b1e6d2026e0ea9ca8d3e562ea6e4a825a87643
+
 
 end
 
