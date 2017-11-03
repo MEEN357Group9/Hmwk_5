@@ -42,7 +42,7 @@ for j = 1:length(fx)
     
 end
 
-I = 3*h / 8 * sum(Iin);
+I = 3* h/ 8 * sum(Iin);
 
 end
 
