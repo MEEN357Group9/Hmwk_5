@@ -29,14 +29,14 @@ if isvector(fx) ~= 1
 end
 
 if isnumeric(x) ~= 1
-     error('One of your inputs is not a vector')
+     error('One of your inputs is not a vector with numerical data')
 end
 
 if isnumeric(fx) ~= 1
-     error('One of your inputs is not a vector')
+     error('One of your inputs is not a vector with numerical data')
 end
 
-% Approximation of derivative
+% Approximation of derivative by backward difference method
 I = zeros;
 for i = 3:chk1-2 % starts at 3 instead of 1 so term i-2 does not fall below zero
     I(i-2) = (3*fx(i) - 4*fx(i-1) + fx(i-2))/(2*(x(i) - x(i-1)));
