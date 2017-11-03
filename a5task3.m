@@ -27,14 +27,16 @@ for j = 3:30
     Itrap(u) = trapint(x,y);
     
     u = u +1;
-    % makes sure that sim can even run properly
-    if mod(length(y)-1,3) ~= 0
-        
-    else
-       Isim(v) = simp38int(h,y);
-        sizess(v) = j;
+end
+
+for k = 3:3:30
+   h = 3/k; %interval
+    x = linspace(0,3,k); % x values
+    y = x.^2.*sin(x); 
+
+Isim(v) = simp38int(h,y);
+        sizess(v) = k;
         v = v + 1;
-    end
 end
 
 % legit integral
