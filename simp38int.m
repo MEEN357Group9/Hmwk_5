@@ -1,4 +1,4 @@
-function [ I ] = simp38int( h, fx )
+function [ Iin ] = simp38int( h, fx )
 % Takes data sampled at evenly spaced locations as inputs and returns an
 % approximation of the integral over the sample range based on Simpson's
 % multiple-application 3/8 rule 
@@ -31,14 +31,13 @@ end
 
 % actual integration
 Iin = zeros(1); % start summation
-l = 1;
 
-for j = 1:3:length(fx)-2 %%%%%%%%%% they said that it should just be the
+for j = 1:length(fx) %%%%%%%%%% they said that it should just be the
                                 %equation in lecture 9 slide 20 and then
                                 % it's just playing around with the index
     
-    Iin(l) = (3*h)*(fx(j) + 3*fx(j) + 3*fx(j+1) + fx(j+2))/8;
-    l = l+1;
+    Iin(j) = (3*h)*(fx(j) + 3*fx(j) + 3*fx(j+1) + fx(j+2))/8;
+    Iin=sum(Iin);
     %{
     %%%%%%% so the way the index goes is it's supposed to 
             do steps 1,2,3,4 then 4,5,6,7 then 7,8,9,10 and so on                   
@@ -56,7 +55,11 @@ for j = 1:3:length(fx)-2 %%%%%%%%%% they said that it should just be the
     
 end
 
-I = sum(Iin);
+% <<<<<<< HEAD
+% I = 3* h/ 8 * sum(Iin);
+% =======
+%I = 3*h / 8 * sum(Iin);
+% >>>>>>> 45b1e6d2026e0ea9ca8d3e562ea6e4a825a87643
 
 end
 
