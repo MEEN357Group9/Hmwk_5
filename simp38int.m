@@ -18,7 +18,7 @@ if ~isscalar(h)
     error('h must be a scalar value.')
 elseif ~isvector(fx)
     error('fx must be a vector.')
-elseif mod(length(fx)-1,3) == 0 %%%%%%%% also apparently this was wrong on the 
+elseif mod(length(fx)-1,3) ~= 0 %%%%%%%% also apparently this was wrong on the 
     %                               document, it's supposed to be
     %                               (length(x)-1)/3 because of something
     %                               about the number of points it uses 

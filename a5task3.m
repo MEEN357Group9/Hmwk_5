@@ -28,7 +28,7 @@ for j = 3:30
     
     u = u +1;
     % makes sure that sim can even run properly
-    if mod(length(y)-1,3) == 0
+    if mod(length(y)-1,3) ~= 0
         
     else
        Isim(v) = simp38int(h,y);
